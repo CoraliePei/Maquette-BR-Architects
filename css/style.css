@@ -1,263 +1,264 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.bold {
-    font-weight: bold;
+html {
+    scroll-behavior: smooth;
 }
 
-.unbold {
-    font-weight: normal;
+body {
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
-.none {
-    text-decoration: none;
-    color: #000;
-}
-
-/* ENTETE */
 header {
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
 }
 
-nav {
+header .banner {
+    width: 100vw;
+    height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    position: fixed;
+    z-index: 30;
     background-color: #fff;
 }
 
-.logo {
-    width: 30%;
-    padding-left: 50px;
-    font-size: 1.5em;
-    letter-spacing: 0.3em;
+/* .logo invisible mobile version */
+header .banner .logo {
+    width: min-content;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    display: none;
+}
+
+header .banner .logo span {
+    padding: 8px;
+    margin-right: 3px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #000;
+}
+
+header .banner nav {
+    width: 80%;
+    height: 100%;
+}
+
+header .banner nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .banner nav ul li {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .banner nav ul li a {
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
     color: #000;
 }
 
-#menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 40%;
-    height: 70px;
-    background-color: #ffffff;
-    top: 0;
-    align-items: center;
-    margin-right: 30px;
-    letter-spacing: 0.3em;
-}
-
-#menu li {
-    list-style: none;
-}
-
-#menu li a {
-    display: block;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 25px 10px 28px;
-}
-
-#menu li a:hover {
-    background-color: #000000;
+header .banner nav ul li a:hover {
     color: #fff;
-} 
+    background-color: rgb(2, 2, 2);
+}
 
-#imgArchitect {
-    display: flex;
-    background-image: url("../img/architect.jpg");
-    height: 800px;
+
+/* Background header */
+header .imgHeader {
     width: 100%;
-    background-size: cover;
+    height: 60vh;
+    background-image: url(../img/architect.jpg);
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
-}
-
-#imgArchitect div h1 {
     display: flex;
-    position: absolute;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 800px;
-    letter-spacing: 0.3em;
+}
+
+header .imgHeader h1 {
     color: #fff;
+    padding: 10px;
 }
 
-.br {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.774);
-    width: 90px;
-    height: 60px;
-    margin-right: 10px;
-    letter-spacing: 0;
+header .imgHeader h1 span:nth-child(1) {
+    font-weight: 900;
+    background-color: #00000091;
+    padding: 10px;
 }
 
-/* CORPS DE LA PAGE */
+header .imgHeader h1 span:nth-child(2) {
+    font-weight: 100;
+}
 
+/* Main contenu  */
 main {
-    margin-right: 40px;
-    margin-left: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 {
-    font-size: 2em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 40px;
-}
-
-hr {
-    margin-bottom: 40px;
-    color:rgb(73, 72, 72)
-}
-
-/* PROJETS MAISONS */
-.house {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.house figure {
+main h2 {
+    margin-top: 2em;
+    margin-left: 10px;
+}
+
+main #projects {
+    width: 100%;
     display: flex;
-    width: 24%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+
+main #projects figure {
+    width: 45%;
+    aspect-ratio: 1.66666;
+    margin-bottom: 5px;
+    position: relative;
     overflow: hidden;
 }
 
-.house figure img {
-    max-width: 100%;
-    transition: all 0.5s;
-    
-}
-
-.house figure img:hover {
-    transform: scale(1.1);
-}
-
-.house figure figcaption {
-    display: flex;
+main #projects figure figcaption {
     position: absolute;
-    z-index: 2;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 40px;
-    background-color: #000;
+    top: 0;
+    left: 0;
     color: #fff;
-    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 0.9em;
+    z-index: 10;
 }
 
-/* PARAGRAPHES */
-.txt-about, .txt-contact {
-    font-size: 1.3em;
-    margin-bottom: 30px;
+main #projects figure img {
+    width: 100%;
+    transition: all 0.6s;
 }
 
-/* ABOUT PROFILS */
-#profils {
+main #projects figure img:hover {
+    transform: scale(1.2);
+}
+
+/* Section About */
+main #about {
+    width: 100%;
+    margin-top: 1em;
+}
+
+main #about p:nth-child(1) {
+    margin-top: 1em;
+    text-align: justify;
+}
+
+main #about .cardContainer {
+    margin-top: 1em;
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#profils div {
-    width: 24%;
-}
-
-#profils div img {
-    width : 100%;
-    filter: grayscale(70%);
-}
-
-#profils div h3 {
-    font-size: 2em;
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
-
-#profils div h4 {
-    font-size: 1.5em;
-    color:#6d6a6a;
-    padding-bottom: 15px;;
-}
-
-#profils div p {
-    font-size: 1.2em;
-    padding-bottom: 20px;
-}
-
-#profils div a {
-    display: flex;
-    width: 100%;
-    height: 50px;
-    background-color: #f8f2f2;
-    margin-bottom: 30px;
-    font-size: 1.3em;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#profils div a:hover {
-    background-color: #000;
-    color:#fff;
-}
-
-/* FORMULAIRE DE CONTACT */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input {
-    height: 50px;
-    padding-left: 10px;
-    font-size: 1.3em;
-    border: 1px solid #969393;
-}
-
-.submit {
-    width: 200px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    padding-right: 10px;
+main #about .cardContainer .card {
+    width: 49%;
     text-align: center;
-    background-color: #000;
-    color: #fff;
+    margin-bottom: 20px;
+    background-color: #978f9008;
+}
+
+main #about .cardContainer .card img {
+    width: 100%;
+    filter: grayscale(0.7);
+}
+
+main #about .cardContainer .card h3 {
+    font-weight: 400;
+    margin-top: 0.5em;
+}
+
+main #about .cardContainer .card h4 {
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+main #about .cardContainer .card p {
+    font-weight: 100;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    padding: 0px 3px 0px 3px;
+}
+
+main #about .cardContainer .card button {
+    width: 100%;
+    border: 1px solid #00000000;
+    padding: 5px;
+    margin-top: 0.5em;
     cursor: pointer;
 }
 
-.submit:hover {
+main #about .cardContainer .card button:hover {
+    border: 1px solid #000;
+    background-color: rgb(146, 137, 137);
+    color: #fff;
+}
+
+/* Section Contact  */
+main #contact {
+    width: 100%;
+}
+
+main #contact p {
+    margin-top: 0.5em;
+}
+
+main #contact form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+main #contact form input {
+    margin-top: 0.5em;
+    padding: 5px;
+}
+
+main #contact form input:nth-child(5) {
+    width: max-content;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+
+main #contact form input:nth-child(5):hover {
+    color: #000;
     background-color: #fff;
-    color:#000;
     border: 1px solid #000;
 }
-
-#maps {
+main #contact img {
     width: 100%;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
-    display: flex;
     width: 100%;
-    height: 80px;
-    background-color: #000;
-    color:#fff;
-    font-family: Arial, Helvetica, sans-serif;
+    height: 10vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;   
+    color: #fff;
+    background-color: #000;
 }
