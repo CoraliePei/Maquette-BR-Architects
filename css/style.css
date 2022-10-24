@@ -262,3 +262,43 @@ footer {
     color: #fff;
     background-color: #000;
 }
+
+
+/* Responsive tablettes */
+@media screen and (min-width: 577px) {
+    header .banner {
+        justify-content: space-around;
+    }
+    
+    header .banner .logo {
+        display: block;
+    }
+
+    header .banner nav {
+        width: 50%;
+    }
+}
+
+/* Responsive PC+ */
+@media screen and (min-width: 769px) {
+    header .banner {
+        justify-content: space-between;
+        padding: 0px 15px 0px 15px;
+    }
+
+    header .banner nav {
+        width: 30%;
+    }
+
+    main #projects figure {
+        width: 24%;
+    }
+
+    main #about .cardContainer .card {
+        width: 24%;
+    }
+
+    main #contact form {
+        max-width: 50%;
+    }
+}
